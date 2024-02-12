@@ -1,3 +1,5 @@
+using FluentAssertions;
+
 namespace TDDKata.PasswordValidator.Tests;
 
 public class PasswordValidatorTests
