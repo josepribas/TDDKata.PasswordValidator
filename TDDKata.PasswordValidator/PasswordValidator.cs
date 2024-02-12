@@ -10,6 +10,9 @@ public static class PasswordValidator
         if (!password.Any(char.IsUpper))
             return false;
 
+        if (!password.Contains('_'))
+            return false;
+
         return true;
     }
 }
