@@ -7,6 +7,9 @@ public static class PasswordValidator
         if (!password.Any(char.IsDigit))
             return false;
 
+        if (!password.Any(char.IsUpper))
+            return false;
+
         return true;
     }
 }
