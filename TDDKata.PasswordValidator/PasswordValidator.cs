@@ -13,6 +13,9 @@ public static class PasswordValidator
         if (!password.Contains('_'))
             return false;
 
+        if (password.Length < 8)
+            return false;
+
         return true;
     }
 }
