@@ -21,6 +21,11 @@ public class PasswordValidatorTests
     }
 
     [Fact]
+    public void Password_Without_An_Lowercase_Returns_False() {
+        PasswordValidator.Validate("1234ABC__").Should().Be(false);
+    }
+
+    [Fact]
     public void Password_Without_An_Undescore_Returns_False() {
         PasswordValidator.Validate("1234ABCabc").Should().Be(false);
     }

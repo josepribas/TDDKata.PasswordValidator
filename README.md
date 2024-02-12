@@ -52,4 +52,18 @@ Dins del directori de la solució:
 - Té una lletra majúscula: `<cadena>.Any(char.IsUpper)`.
 - Té un guió baix: `<cadena>.Contains('_')`.
 
+## Refactorització amb expressions regulars
 
+Sense modificar els requisits, canviar el programa per que utilitzi expressions regulars per fer les validacions.
+
+- Té un número: `(?=.*?[0-9])`.
+- Té una lletra minúscula: `(?=.*?[a-z])`.
+- Té una lletra majúscula: `(?=.*?[A-Z])`.
+- Té un guió baix: `(?=.*?[_])`.
+- Té al menys 8 caràcters: `.{8,}` .
+
+Totes les validacions en una expressió: 
+```c#
+Regex validatePasswordRegex = new Regex("^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[_]).{8,}$");
+bool validPassword = validatePasswordRegex.IsMatch(password); 
+```
