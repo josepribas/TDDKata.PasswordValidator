@@ -45,4 +45,11 @@ Dins del directori de la solució:
 Dins del directori de la solució:
 `dotnet test`
 
+## Comprovacions de cadenes amb C#
+
+- Té un número: `<cadena>.Any(char.IsDigit)`.
+- Té una lletra minúscula: `<cadena>.Any(char.IsLower)`.
+- Té una lletra majúscula: `<cadena>.Any(char.IsUpper)`.
+- Té un guió baix: `<cadena>.Contains('_')`.
+
 
