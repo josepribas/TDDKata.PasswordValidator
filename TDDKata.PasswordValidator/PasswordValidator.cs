@@ -1,24 +1,13 @@
-﻿namespace TDDKata.PasswordValidator;
+﻿using System.Text.RegularExpressions;
+
+namespace TDDKata.PasswordValidator;
 
 public static class PasswordValidator
 {
     public static bool Validate(string password) {
 
-        if (!password.Any(char.IsDigit))
-            return false;
+        Regex validatePasswordRegex = new Regex("^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[_]).{8,}$");
+        return validatePasswordRegex.IsMatch(password); 
 
-        if (!password.Any(char.IsUpper))
-            return false;
-        
-        if (!password.Any(char.IsLower))
-            return false;
-
-        if (!password.Contains('_'))
-            return false;
-
-        if (password.Length < 8)
-            return false;
-
-        return true;
     }
 }
