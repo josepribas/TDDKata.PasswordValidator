@@ -24,4 +24,9 @@ public class PasswordValidatorTests
     public void Password_Without_An_Undescore_Returns_False() {
         PasswordValidator.Validate("1234ABCabc").Should().Be(false);
     }
+
+    [Fact]
+    public void Password_With_Less_Than_8_Characters_Returns_False() {
+        PasswordValidator.Validate("1Aa_").Should().Be(false);
+    }
 }
