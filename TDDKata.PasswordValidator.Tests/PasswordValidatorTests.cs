@@ -19,4 +19,9 @@ public class PasswordValidatorTests
     public void Password_Without_An_Uppercase_Returns_False() {
         PasswordValidator.Validate("1234abc__").Should().Be(false);
     }
+
+    [Fact]
+    public void Password_Without_An_Undescore_Returns_False() {
+        PasswordValidator.Validate("1234ABCabc").Should().Be(false);
+    }
 }
